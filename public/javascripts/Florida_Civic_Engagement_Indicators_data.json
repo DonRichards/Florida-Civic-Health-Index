@@ -1,0 +1,28 @@
+[
+   {
+      "watershed":"Florida",
+      "visited":"20454",
+      "Turnout_presidential":"23",
+      "Reg_pres":"45",
+      "Group":"20.0",
+      "Volunteered":"41",
+      "Turnout_midterm":"47",
+      "Attended":"53",
+      "Reg_midterm":"23",
+      "neighborhood":"33",
+      "favors":"50"
+   },
+   {
+      "watershed":"Nation",
+      "visited":"19815",
+      "Turnout_presidential":"25",
+      "Reg_pres":"66",
+      "Group":"24",
+      "Volunteered":"62",
+      "Turnout_midterm":"37",
+      "Attended":"46",
+      "Reg_midterm":"22",
+      "neighborhood":"23",
+      "favors":"55"
+   }
+]

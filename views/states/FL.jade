@@ -1,0 +1,86 @@
+currentState
+	selection#selectionCities
+		.bannerFl2
+			br
+			#metro 
+			h2#name Select a Metropolitan Area
+		// This is only visable on mobile devices and is leveraged to change page content
+		select(onchange="selectCity()")#cities 
+			option(value='Cape') Cape Coral, Fort Myers
+			option(value='Daytona') Deltona, Daytona Beach, Ormond Beach
+			option(value='Jacksonville') Jacksonville
+			option(value='Lakeland') Lakeland, Winter Haven
+			option(value='Miami') Miami, Fort Lauderdale, Miami Beach
+			option(value='Orlando') Orlando 
+			option(value='Titusville') Palm Bay, Melbourne, Titusville
+			option(value='Pensacola') Pensacola, Ferry Pass, Brent
+			option(value='Sarasota') Sarasota, Bradenton, Venice
+			option(value='Tampa') Tampa, St. Petersburg, Clearwater
+block content
+	div#here
+		#mapHere
+	script(tyoe='text/javascript').
+		// This script reads from the "Select" options and shouldn't be on the JS file
+		// Setting a first time reset
+		var a = 0;
+		if (a == 0) {
+			selectCity("Cape"); // Default selection
+		}
+
+		function selectCity(){
+			if (a == 1) {
+				removeDiv(); // Removes Div to reset for new city
+				a=0;
+			}
+
+			var x = document.getElementById("cities").selectedIndex;
+			var y = document.getElementById("cities").options;
+			
+			switch(y[x].text) {
+				case ('Cape Coral, Fort Myers'):
+					page = "Cape";
+					break;
+				case ('Deltona, Daytona Beach, Ormond Beach'):
+					page = "Daytona";
+					break;
+				case ('Jacksonville'):
+					page = "Jacksonville";
+					break;
+				case ('Lakeland, Winter Haven'):
+					page = "Lakeland";
+					break;
+				case ('Miami, Fort Lauderdale, Miami Beach'):
+					page = "Miami";
+					break;
+				case ('Orlando'):
+					page = "Orlando";
+					break;
+				case ('Palm Bay, Melbourne, Titusville'):
+					page = "Titusville";
+					break;
+				case ('Pensacola, Ferry Pass, Brent'):
+					page = "Pensacola";
+					break;
+				case ('Sarasota, Bradenton, Venice'):
+					page = "Sarasota";
+					break;
+				case ('Tampa, St. Petersburg, Clearwater'):
+					page = "Tampa";
+					break;
+				default:
+					page = "404";
+					break;
+				}
+
+			var divTag = document.createElement("div"); /* Creates DIV and places State's page into it */
+			divTag.id = "currentCity"; /* Add #currentCity example: Florida.jade is loaded here */
+			divTag.className = 'compare';
+			divTag.setAttribute('style', 'text-align:center');
+			divTag.innerHTML = page;
+			par = document.getElementById('mapHere');
+			par.insertBefore(divTag, par.childNodes[1]);
+			$('#currentCity').load('/' + page); /* Add Content to Div with jquery */
+			
+			a = 1; /* To tell function this have run once and it needs to remove div before
+				new div is added */
+		}

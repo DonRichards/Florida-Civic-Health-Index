@@ -1,0 +1,51 @@
+extends ../layout
+block append head
+block content
+	// Voters Bought Boycotted Products
+	.hero-wrapper(style='background: url(/videos/home.jpg)  no-repeat;')
+		.videoBG_wrapper
+			.container
+				.row
+					article.articleText
+						h1
+							span.nowrap Voters Bought Boycotted Products
+		.videoBG
+			video(poster='/images/store.jpg').blur
+	.ALtable
+		table.smallBarTable
+			tbody
+				tr
+					td(colspan='2', align='left', valign='top', width='225', style='font-weight: bold; padding-top: 3px; padding-left: 13px;') 2011
+					td(colspan='2', width='217', align='left', valign='top', style='font-weight: bold; padding-top: 3px; padding-left: 13px;') 
+						span.red Bought or Boycotted a Product
+				tr
+					td(width='40', align='left', valign='top').tableState
+						img(src='/images/states/Orange_Florida_icon.png', alt='', title='').tableStateIcon
+						img(src='/images/state_icons/Flag-of-United-States.png', alt='', title='').tableStateIcon
+					td(width='auto', align='left', valign='top').tableNames
+						| Florida
+						br
+						| National Average
+						br
+					td(width='155', align='left', valign='top').barGraphs
+					td(width='35', align='left', valign='top').tableNames.tableNames
+						span.red 11.0%
+						br
+						span.red 12.1%
+						br
+
+	script(src='../javascripts/d3.v3.js')
+	script(src='../javascripts/civicEngagment.js')
+	//.developersNote
+		h2 Developer Notes:
+		p Background of the Bar charts
+		p Top Video is a sample of 
+			| video about subject in the graph
+		| This is a sample we CAN'T use for commercial purposes
+
+//
+	Year	Bought_Boycotted_Product_Florida	Bought_Boycotted_Prodct_Nation	|	Group_Membership_Florida	Group_Memebership_Nation
+	2008	9.2									10.7								30.9						35.9
+	2009	6.6									9.7									30.4						36.2
+	2010	8.7									10.0								28.4						34.0
+	2011	11.0								12.1								33.6						39.2

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	div.pageContainer
+		div.pagebanner
+			h1.pageTitle Page Not Found
+		div.pageContent
+			div.container
+				h1 500 Error: Monkey error
+				p It’s looking like you may have taken a wrong turn. 
+				p Don’t worry... it happens to the best of us. 
+				h1 Error: #{error.message}
+				if settings['verbose errors']
+					pre= error.stack
+				else
+					p An error ocurred!

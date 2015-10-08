@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	#pageht
+		#mapBannerBG
+		map#mapBanner
+		.content
+			//script(src='/javascripts/d3.v3.min.js', charset='utf-8')
+			script(src='/javascripts/d3.js', charset='utf-8')
+			script(src='/javascripts/topojson.v1.min.js', charset='utf-8')
+			script(src='/javascripts/jquery-1.11.0.min.js', charset='utf-8')
+			script(src='/javascripts/state-to-state.js', charset='utf-8')
+		#ht
+		.mapTitle 
+			h1.textCenter Compare Florida with another State in 2012

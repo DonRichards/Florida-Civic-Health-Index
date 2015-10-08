@@ -1,0 +1,19 @@
+{
+  "name": "FCHI-Public",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "start": "nodemon -e css,js,jade app.js"
+  },
+  "dependencies": {
+    "async"          : "^1.4.x",
+    "express"        : "^4.2.x",
+    "helmet"         : "^0.4.x",
+    "jade"           : "^1.11.x",
+    "less-middleware": "^2.0.x",
+    "serve-static"   : "^1.10.x",
+    "morgan"         : "^1.6.x",
+    "body-parser"    : "1.14.1",
+    "compression"    : "1.6.0"
+  }
+}

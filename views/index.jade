@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	#contentIndex
+		.ALtable2#mainBanner
+			br
+			br
+			h1.white.center Tracking Florida's civic health
+			.center#easy-as-pie-chart
+		div#easy-as-bar-chart
+	div#blubIndex
+		p.center 
+			a(href='http://www.census.gov', target="_blank")
+				img(src='images/Census_Bureau_seal.png')#circle.floatLeft
+			| Results reported here by the 
+			a(href='http://LouFreyInstitute.org', target="_blank") Lou Frey Institute 
+			| are based on data collected in the annual Voting and Registration and Civic Engagement supplements to the 
+			a(href='http://www.census.gov', target="_blank") U.S. Census Bureau's 
+			a(href='http://www.census.gov/cps/about/supplemental.html', target="_blank") Current Population Survey 
+	script(src='../javascripts/d3.v3.js')
+	script(src='../javascripts/index.js')

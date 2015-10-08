@@ -1,0 +1,58 @@
+	.center: h1 Florida Civic Engagement Indicators
+		.desktop
+			.container
+				section.main
+					.wrapper-demo
+						#dd.wrapper-dropdown-5(tabindex='1') Select Here
+							ul.dropdown
+								li: a(href='#', type='select', onclick='updateData("Turnout_presidential")', selected='true') Turnout in last presidential election
+								li: a(href='#', type='select', onclick='updateData("Reg_pres")') Registration in last presidential election
+								li: a(href='#', type='select', onclick='updateData("Turnout_midterm")') Turnout in last midterm election
+								li: a(href='#', type='select', onclick='updateData("Reg_midterm")') Registration in last midterm election
+								li: a(href='#', type='select', onclick='updateData("visited")') Contacted or visited public official
+								li: a(href='#', type='select', onclick='updateData("Group")') Group participation
+								li: a(href='#', type='select', onclick='updateData("Volunteered")') Volunteered for any group
+								li: a(href='#', type='select', onclick='updateData("Attended")') Attended a public meeting
+								li: a(href='#', type='select', onclick='updateData("favors")') Did favors for neighbors at least a few times per week 
+								li: a(href='#', type='select', onclick='updateData("neighborhood")') Worked with neighbor s to fix problem in neighborhood
+		select#selectionMenu(type='select', onchange='updateData(value);').mobile
+			option(value='Turnout_presidential', name='Turnout_presidential', selected='true') Turnout in last presidential election
+			option(value='Reg_pres', name='Reg_pres') Registration in last presidential election
+			option(value='Turnout_midterm', name='Turnout_midterm') Turnout in last midterm election
+			option(value='Reg_midterm', name='Reg_midterm') Registration in last midterm election
+			option(value='visited', name='visited') Contacted or visited public official
+			option(value='Group', name='Group') Group participation
+			option(value='Volunteered', name='Volunteered') Volunteered for any group
+			option(value='Attended', name='Attended') Attended a public meeting
+			option(value='favors', name='favors') Did favors for neighbors at least a few times per week 
+			option(value='neighborhood', name='neighborhood') Worked with neighbor s to fix problem in neighborhood
+		barGraph
+	script(src='javascripts/d3.js')
+	script(src='javascripts/index_bar.js')
+	script(src='javascripts/jquery-1.11.0.min.js')
+	script.
+		function DropDown(el) {
+			this.dd = el;
+			this.initEvents();
+		}
+		DropDown.prototype = {
+			initEvents : function() {
+				var obj = this;
+
+				obj.dd.on('click', function(event){
+					$(this).toggleClass('active');
+					event.stopPropagation();
+				});	
+			}
+		}
+
+		$(function() {
+
+			var dd = new DropDown( $('#dd') );
+
+			$(document).click(function() {
+				// all dropdowns
+				$('.wrapper-dropdown-5').removeClass('active');
+			});
+
+		});
