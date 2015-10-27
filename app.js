@@ -39,8 +39,7 @@ app.use(parallel([
   logger('dev'),
   bodyParser.json(),
   bodyParser.urlencoded({ extended: false }),
-  require('less-middleware')(path.join(__dirname, 'public')),
-  express.static(path.join(__dirname, 'public'), { maxAge: oneDay }),
+  express.static('public'),
   helmet(),
 ]));
 
