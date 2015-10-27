@@ -1,7 +1,14 @@
-# [Florida-s-Civic-Health-Index](https://github.com/DonRichards/Florida-Civic-Health-Index)
+# [Florida-Civic-Health-Index](https://github.com/DonRichards/Florida-Civic-Health-Index)
+
+### Update / Pull Request from /var/www/LouFreyInstitute 
+    
+    git pull https://github.com/DonRichards/Florida-Civic-Health-Index.git
+
 ============================
-  Hosted URL: FloridaCivicHealth.com
-  National Civic Health Index NOT Public yet
+
+Hosted URL: FloridaCivicHealth.com
+
+National Civic Health Index NOT Public yet
 
 ##Florida Civic Health Index Development
   Minimalist site in Node.js, Express.JS, D3.js. No databases or complex json structure for data. 
