@@ -39,7 +39,7 @@ app.use(parallel([
   logger('dev'),
   bodyParser.json(),
   bodyParser.urlencoded({ extended: false }),
-  express.static('public'),
+  express.static(path.join(__dirname, 'public'), { maxAge: oneDay }),
   helmet(),
 ]));
 
